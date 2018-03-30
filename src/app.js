@@ -1,20 +1,19 @@
-require('./less/style.less');
-import React from 'react';
-import ReactDom from 'react-dom';
-import Header from './components/Header';
-import {Router, Route, Redirect, Link, browserHistory} from 'react-router';
-import NotFoundPage from './pages/PageNotFound'
-import app from './components'
+import React, { Component } from 'react';
+import './App.less';
 
-class App extends React.Component {
-    render() {
-        return <Router history={browserHistory}>
-				<Route path="/" component={app} >
-					<Route path="test" component={Header}/>
-				</Route>
-				<Route path="*" component={NotFoundPage}/>
-			</Router>;
-    }
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
 }
 
-ReactDom.render(<App />, document.getElementById('app'))
+export default App;
